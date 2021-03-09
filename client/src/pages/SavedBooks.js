@@ -11,11 +11,11 @@ import {
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
-import { GET_ME, REMOVE_BOOK } from "../utils/mutations";
+import { GET_ME } from "../utils/queries";
 
 const SavedBooks = () => {
-  const [userData, setUserData] = useState({});
-  const { data: userData } = useQuery(GET_ME);
+  // const [userData, setUserData] = useState({});
+  const { data: userData } = useMutation(GET_ME);
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
 
