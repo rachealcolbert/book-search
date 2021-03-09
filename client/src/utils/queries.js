@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import gql from "graphql-tag";
 
 export const QUERY_BOOKS = gql`
   query {
@@ -12,7 +12,7 @@ export const QUERY_BOOKS = gql`
   }
 `;
 
-export const QUERY_GET_ME = gql`
+export const GET_ME = gql`
   {
     me {
       _id: ID

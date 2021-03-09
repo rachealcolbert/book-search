@@ -22,12 +22,11 @@ const resolvers = {
         .select("-__V -password")
         .populate("savedBooks");
     },
-    books: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Book.find(params).sort({ createdAt: -1 });
+    books: async () => {
+      return Book.find();
     },
-    book: async (parent, { _id }) => {
-      return Book.findOne({ _id });
+    book: async (parent, { title }) => {
+      return Book.findOne({ title });
     },
   },
   Mutation: {
