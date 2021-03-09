@@ -28,7 +28,7 @@ const LoginForm = (props) => {
     }
 
     try {
-      const response = await login({
+      const { data } = await login({
         variables: { ...userFormData },
       });
 
@@ -92,6 +92,7 @@ const LoginForm = (props) => {
           Submit
         </Button>
       </Form>
+      {error && <div>Login failed</div>}
     </>
   );
 };
