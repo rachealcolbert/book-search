@@ -15,11 +15,11 @@ export const QUERY_BOOKS = gql`
 export const GET_ME = gql`
   {
     me {
-      _id: ID
-      username: String
-      email: String
-      bookCount: Int
-      savedBooks: [Book]
+      _id
+      username
+      email
+      bookCount
+      savedBooks
     }
   }
 `;
